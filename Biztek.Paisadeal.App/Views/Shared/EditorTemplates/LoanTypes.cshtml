@@ -1,0 +1,23 @@
+﻿@model Enum
+<div class="col-md-6">
+    <h5>
+        <strong>
+            @Html.DisplayNameForModel();
+    </strong>
+</h5>
+<div class="input-group margin-bottom-sm" style="width:100%">
+
+    @foreach (var value in Enum.GetValues(Model.GetType()))
+    {
+        var id = TagBuilder.CreateSanitizedId(string.Format(
+            "{0}_{1}_{2}", ViewData.TemplateInfo.HtmlFieldPrefix, Model.GetType(), value));
+
+        <span class="radio-inline" style="text-align:left">
+            @{ var iselected = string.Equals(Convert.ToString(value),Convert.ToString(ViewData["SelectedValue"]), StringComparison.OrdinalIgnoreCase);}
+            @Html.RadioButton(string.Empty, value, iselected , new { id })
+            &nbsp;
+            @value.ToString()
+        </span>
+    }
+</div>
+</div>

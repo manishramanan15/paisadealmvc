@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+@section header{
+    <style>
+    input[type="radio"] {border: 1px solid;width:20px;
+    height:20px !important;background-color:white;color:#fff;padding:5px}
+	.radio-inline {width:45%;font-size:16px}
+	.myform .col-md-6{margin-top:15px;margin-bottom:15px;}
+	.submitButtons a {padding-left:50px;padding-right:50px;padding-top:10px;padding-bottom:10px;color:#fff;font-size:18px;font-weight:bold;text-decoration:none;border-radius:3px;letter-spacing:1px;margin:5px;}
+    .IconText {padding-bottom:0px;font-size:18px;font-weight:bold;text-align:center;}
+    @@media (max-width:990px){
+    .col-md-3 {width:25%;display:inline;float:left}
+    .IconText {padding-bottom:0px;font-size:14px;font-weight:bold;text-align:center;}
+    }
+
+@@media (max-width:500px){
+.col-md-3 {width:25%;display:inline;float:left}
+.IconText {padding-bottom:0px;font-size:10px;font-weight:bold;text-align:center;}
+}
+    </style>
+
+}
+<div class="container">
+    <div class="col-md-12">
+        <div>
+            <div class="col-md-3 IconText">Personal Info</div>
+            <div class="col-md-3 IconText">Type of Loan</div>
+            <div class="col-md-3 IconText">Credit Info</div>
+            <div class="col-md-3 IconText">Same Loan <br />Rate & Terms</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="/img/icon.jpg" style="width:85%;max-width:100%;text-align:center;margin:auto" />
+        </div>
+
+        <div style="clear:both"></div>
+        <div style="height:40px;width:100%"></div>
+    </div>
+    <div class="col-md-12 myform">
+        <h2 style="color:#7493BA;padding-left:12px"> <strong>Step 2: Types Of Loan</strong></h2>
+
+        <div style="clear:both"></div>
+        <div style="height:20px;width:100%"></div>
+
+
+        <div class="col-md-6">
+            <h5><strong>Type Of Loan</strong></h5>
+            <div class="input-group margin-bottom-sm" style="width:100%">
+                <span class="radio-inline" style="text-align:left">
+                    <input type="radio" name="LoanType"> &nbsp; Business Loan
+                </span>
+
+                <span class="radio-inline">
+                    <input type="radio" name="LoanType"> &nbsp; Personal Loan
+                </span>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-6">
+            <h5><strong>Employbility</strong></h5>
+            <div class="input-group margin-bottom-sm" style="width:100%">
+                <span class="radio-inline" style="text-align:left">
+                    <input type="radio" name="Employbility"> &nbsp; Employee
+                </span>
+
+                <span class="radio-inline">
+                    <input type="radio" name="Employbility"> &nbsp; Employer
+                </span>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <h5><strong>Company Name</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <h5><strong>Type Of Company</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Designation</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Company Address</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Company Phone Number</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>State</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Net Salary</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-inr" aria-hidden="true"></i>
+
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>City</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Annual Salary</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-inr" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Pin Code</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-flag-o" aria-hidden="true"></i>
+
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h5><strong>Form 16 ID</strong></h5>
+            <div class="input-group margin-bottom-sm">
+
+                <span class="input-group-addon">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </span>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+
+    </div>
+
+    <div style="clear:both"></div>
+
+    <div class="submitButtons" style="margin-top:40px;text-align:center;">
+        <a href="#" style="background-color:#ff0000;">Next</a>
+        <a href="#" style="background-color:#a6a6a6;">Back</a>
+    </div>
+
+
+    <div style="clear:both"></div>
+    <div style="height:40px;width:100%"></div>
+
+</div>
+

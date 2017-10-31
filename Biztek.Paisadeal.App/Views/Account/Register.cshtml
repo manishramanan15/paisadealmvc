@@ -1,0 +1,67 @@
+﻿@model Biztek.Paisadeal.App.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="content-box" style="border:2px solid #e2e2e2; border-radius:3px;background:#f2f2f2"><h1 style="padding-top:30px;color:#ff8080;font-size:28px;font-weight:bold"><span style="color:#2C6EAD">Congratulations</span> You are at strep 1 to your loan!</h1></div>
+    </div>
+    <div class="logmod">
+        <div class="logmod__wrapper">
+            <div class="logmod__container">
+                <ul class="logmod__tabs" style="padding-bottom:40px">
+                    <li data-tabtar="lgm-1">@Html.ActionLink("Sign In", "Login", "Account")</li>
+                    <li data-tabtar="lgm-2" class="current"><a href="#">Sign Up</a></li>
+                </ul>
+                <div class="logmod__tab-wrapper">
+                    <div class="logmod__tab lgm-1 show">
+                        <div class="logmod__form">
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                                <div class="sminputs">
+                                    <div class="input full">
+                                        <div class="col-md-3"> @Html.LabelFor(m => m.Email, new { @class = "string optional" })</div>
+                                        <div class="col-md-9">
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "string optional" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sminputs">
+                                    <div class="input full">
+                                        <div class="col-md-3">  @Html.LabelFor(m => m.Password, new { @class = "string optional" })</div>
+                                        <div class="col-md-9">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "string optional" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sminputs">
+                                    <div class="input full">
+                                        <div class="col-md-3">  @Html.LabelFor(m => m.ConfirmPassword, new { @class = "string optional" })</div>
+                                        <div class="col-md-9">
+                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "string optional" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="simform__actions" style="text-align:center">
+                                    <div>  <button class="sumbit" name="submit" type="sumbit" value="Sign Up">Sign Up</button></div>
+                                    <span class="simform__actions-sidetext"><a class="special" role="link" href="#">Forgot your password?</a></span>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,237 @@
+﻿@using Biztek.Paisadeal.App.Models
+@model CreditInformationViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Header{
+    <style>
+        input[type="radio"] {
+            border: 1px solid;
+            width: 20px;
+            height: 0.8em !important;
+            background-color: white;
+            color: #fff;
+            padding: 5px
+        }
+
+        .radio-inline {
+            width: 45%;
+            font-size: 16px
+        }
+
+        .myform .col-md-6 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .submitButtons a {
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 3px;
+            letter-spacing: 1px;
+            margin: 5px;
+        }
+
+        .IconText {
+            padding-bottom: 0px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @@media (max-width:990px) {
+            .col-md-3 {
+                width: 25%;
+                display: inline;
+                float: left
+            }
+
+            .IconText {
+                padding-bottom: 0px;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+
+        @@media (max-width:500px) {
+            .col-md-3 {
+                width: 25%;
+                display: inline;
+                float: left
+            }
+
+            .IconText {
+                padding-bottom: 0px;
+                font-size: 10px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    </style>
+}
+<div class="container">
+    <div class="col-md-12">
+        <div>
+            <div class="col-md-3 IconText">Personal Info</div>
+            <div class="col-md-3 IconText">Type of Loan</div>
+            <div class="col-md-3 IconText">Credit Info</div>
+            <div class="col-md-3 IconText">Same Loan <br />Rate & Terms</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="/img/icon-second.jpg" style="width:85%;max-width:100%;text-align:center;margin:auto" />
+        </div>
+
+        <div style="clear:both"></div>
+        <div style="height:40px;width:100%"></div>
+    </div>
+    <div class="col-md-12 myform">
+        @using (Html.BeginForm("CreditInformation", "Loan", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", @id = "stepone" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <h2 style="color:#7493BA;padding-left:12px"> <strong>Step 3: Credit Information</strong></h2>
+
+            <div style="clear:both"></div>
+            <div style="height:20px;width:100%"></div>
+
+
+            @Html.EditorFor(m => m.EmployeeType, "LoanTypes", new { SelectedValue = "Business" })
+
+
+            <div class="col-md-6">
+
+            </div>
+            <div style="clear:both"></div>
+
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.CompanyName)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.CompanyName)
+            </div>
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.CompanyBankAccount)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.CompanyBankAccount, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.CompanyBankAccount)
+            </div>
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.TypeOfCompany)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.TypeOfCompany, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.TypeOfCompany)
+            </div>
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.AadharCardNumber)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.AadharCardNumber, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.AadharCardNumber)
+            </div>
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.Designation)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.Designation, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.Designation)
+            </div>
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.ITNumber)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.ITNumber, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.ITNumber)
+            </div>
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.ProfficientType)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.ProfficientType, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.ProfficientType)
+            </div>
+
+
+            <div class="col-md-6">
+                <h5><strong>@Html.DisplayNameFor(m => m.CibilInformation)</strong></h5>
+                <div class="input-group margin-bottom-sm">
+
+                    <span class="input-group-addon">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    </span>
+                    @Html.TextBoxFor(m => m.CibilInformation, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(m => m.CibilInformation)
+            </div>
+
+            <div style="clear:both"></div>
+
+            <div class="submitButtons" style="margin-top:40px;text-align:center;">
+                <a name="submit" href="javascript:" onclick="document.getElementById('stepone').submit();" style="background-color:#ff0000;" value="Next">Next </a>
+                <a href="#" style="background-color:#a6a6a6;">Back</a>
+            </div>
+
+        }
+
+        </div>
+
+        
+        <div style="clear:both"></div>
+        <div style="height:40px;width:100%"></div>
+
+
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
